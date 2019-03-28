@@ -1,0 +1,11 @@
+Flask==1.0.2
+Flask-HTTPAuth==3.2.4
+Flask-RESTful==0.3.7
+Flask-Uploads==0.2.1
+Flask-WTF==0.14.2
+matplotlib==3.0.2
+numpy==1.15.4
+pandas==0.23.4
+scipy==1.1.0
+tablib==0.12.1
+WTForms==2.2.1

@@ -1,0 +1,2 @@
+Sample Name,Peak Height
+C003A-20ppb-A_C01.mpt,0.0010905244626283935

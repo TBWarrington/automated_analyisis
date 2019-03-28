@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<form method="POST" action="{{ url_for('index') }}">
+		{{ form.csrf_token }}
+<table>
+	{% for field in form %}
+	<tr>
+		<td>{% if field.widget.input_type != 'hidden' %} {{ field.label }} {% endif %}</td><td>{{ field }}</td>
+	</tr>
+	{% endfor %}
+</table>
+	</form>
+</body>
+</html>

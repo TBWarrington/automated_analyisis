@@ -1,1 +1,1 @@
-automated_analyisis
+Automated_Analysis

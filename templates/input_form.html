@@ -1,0 +1,60 @@
+<form method=post enctype="multipart/form-data">
+<table>
+	{{ form.hidden_tag() }}
+	{% for field in form %}
+	<tr>
+		<td>{% if field.widget.input_type != 'hidden' %} {{ field.label }} {% endif %}</td><td>{{ field }}</td>
+	</tr>
+	{% endfor %}
+</table>
+<p><input type=submit value=Compute></form></p>
+
+<p>
+{% if result != None %}
+<img src="{{ result }}" width=500>
+{% endif %}
+{% if normal_prism != None %}
+<h3>Normalized</h3>
+<div class="table">
+	{% block normal %}
+	{{ normal_prism|safe }}
+	{% endblock %}
+</div>
+{% endif %}
+{% if raw_prism != None %}
+<h3>Blanked</h3>
+<div class="table">
+	{% block raw %}
+	{{ raw_prism|safe }}
+	{% endblock %}
+</div>
+{% endif %}
+{% if raw_data != None %}
+<h3>EC Data</h3>
+<div class="table">
+	{% block data %}
+	{{ raw_data|safe }}
+	{% endblock %}
+</div>
+{% endif %}
+</p>
+
+<form method=post enctype="multipart/form-data">
+<table>
+	{{ form2.hidden_tag() }}
+	{% for field in form2 %}
+	<tr>
+		<td>{% if field.widget.input_type != 'hidden' %} {% endif %}</td><td>{{ field }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<script>
+	function pictureChange(image)
+	{
+	document.getElementById("theImage").src=image;
+	}
+</script>
+
+<img id="theImage" src="">
+
